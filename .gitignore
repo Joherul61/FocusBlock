@@ -1,0 +1,57 @@
+# Local unpacked-release staging and generated Chrome Web Store archives
+/release-package/
+/FocusBlock-*.zip
+*.crx
+
+# Editor and IDE state
+.vscode/
+.idea/
+*.suo
+*.user
+*.code-workspace
+
+# Operating-system files
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+
+# Logs, temporary files, and crash dumps
+*.log
+*.tmp
+*.temp
+*.bak
+*.old
+*.swp
+*.swo
+*.stackdump
+
+# Local environment and credential files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+secrets.json
+
+# Test output and coverage artifacts
+test/
+tests/
+*.test.js
+*.spec.js
+coverage/
+test-results/
+playwright-report/
+*.test-output
+*.coverage
+__pycache__/
+.pytest_cache/
+_metadata/
+
+# Dependency/build output (the project currently has no build or dependencies)
+node_modules/
+dist/
+build/

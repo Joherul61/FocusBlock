@@ -1,0 +1,76 @@
+:root {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #19243a;
+  background: #f2f5fa;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  min-width: 300px;
+  min-height: 100vh;
+  margin: 0;
+  place-items: center;
+  padding: 24px;
+}
+
+.card {
+  width: min(100%, 430px);
+  padding: 42px 34px;
+  border: 1px solid #e4e9f1;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 20px 60px rgb(31 52 92 / 9%);
+  text-align: center;
+}
+
+.stop-sign {
+  display: grid;
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 18px;
+  place-items: center;
+  border-radius: 21px;
+  background: #fff0ee;
+  font-size: 34px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #6577ad;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 30px;
+  letter-spacing: -0.8px;
+}
+
+.description {
+  max-width: 310px;
+  margin: 13px auto 24px;
+  color: #748096;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.countdown {
+  color: #536ff0;
+  font-size: 48px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -1.5px;
+}
+
+.session-status {
+  margin: 5px 0 0;
+  color: #8691a4;
+  font-size: 12px;
+}

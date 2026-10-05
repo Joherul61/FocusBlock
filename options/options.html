@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FocusBlock Settings</title>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <div class="brand-mark" aria-hidden="true">🎯</div>
+        <div>
+          <p class="eyebrow">FOCUSBLOCK</p>
+          <h1>Settings &amp; statistics</h1>
+          <p class="subtitle">Your focus data stays on this device.</p>
+        </div>
+      </header>
+
+      <section class="panel" aria-labelledby="defaults-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">PREFERENCES</p>
+            <h2 id="defaults-title">Session defaults</h2>
+          </div>
+        </div>
+        <form id="settings-form" class="settings-grid">
+          <label>
+            Default duration
+            <select id="default-duration" name="duration"></select>
+          </label>
+          <div id="default-custom-duration" class="default-custom-duration" hidden>
+            <label>
+              Hours
+              <input id="default-hours" type="number" min="0" max="12" step="1" value="0">
+            </label>
+            <label>
+              Minutes
+              <input id="default-minutes" type="number" min="0" max="59" step="1" value="30">
+            </label>
+          </div>
+          <label>
+            Default mode
+            <select id="default-mode" name="mode">
+              <option value="focus">⚡ Focus Mode</option>
+              <option value="lockdown">🔒 Lockdown Mode</option>
+            </select>
+          </label>
+          <button class="button button-primary" type="submit">Save defaults</button>
+        </form>
+        <p id="settings-message" class="inline-message" role="status"></p>
+      </section>
+
+      <section class="panel" aria-labelledby="custom-sites-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">PERSONAL BLOCK LIST</p>
+            <h2 id="custom-sites-title">Custom websites</h2>
+          </div>
+          <span class="section-note">Added sites can be selected from the popup.</span>
+        </div>
+        <form id="custom-site-form" class="add-site-form">
+          <label class="visually-hidden" for="custom-domain">Website domain</label>
+          <input
+            id="custom-domain"
+            name="domain"
+            type="text"
+            placeholder="example.com"
+            autocomplete="off"
+            spellcheck="false"
+            required
+          >
+          <button class="button button-primary" type="submit">Add website</button>
+        </form>
+        <p class="field-hint">
+          Enter a domain such as example.com or news.example.com. Chrome asks permission
+          for that site when you add it.
+        </p>
+        <p id="custom-site-message" class="inline-message" role="status"></p>
+        <ul id="custom-site-list" class="custom-site-list"></ul>
+        <p id="empty-custom-sites" class="empty-state">No custom websites yet.</p>
+      </section>
+
+      <section class="panel" aria-labelledby="stats-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">LOCAL ONLY</p>
+            <h2 id="stats-title">Your focus</h2>
+          </div>
+          <div id="streak" class="streak">🔥 0 day streak</div>
+        </div>
+        <h3 class="subheading">Today</h3>
+        <div class="stats-grid">
+          <article class="stat-card"><span>Focus time</span><strong id="today-focus-time">0m</strong></article>
+          <article class="stat-card"><span>Sessions</span><strong id="today-sessions">0</strong></article>
+          <article class="stat-card"><span>Completed</span><strong id="today-completed">0</strong></article>
+          <article class="stat-card"><span>Stopped early</span><strong id="today-stopped">0</strong></article>
+          <article class="stat-card"><span>Lockdown</span><strong id="today-lockdown">0</strong></article>
+        </div>
+        <h3 class="subheading">All time</h3>
+        <div class="totals-grid">
+          <div><span>Completed sessions</span><strong id="total-completed">0</strong></div>
+          <div><span>Total focus time</span><strong id="total-focus-time">0m</strong></div>
+          <div><span>Focus sessions</span><strong id="total-focus-sessions">0</strong></div>
+          <div><span>Lockdown sessions</span><strong id="total-lockdown-sessions">0</strong></div>
+          <div><span>Manually stopped</span><strong id="total-stopped">0</strong></div>
+        </div>
+        <div class="reset-row">
+          <p>
+            Counts update when sessions finish. Streaks count consecutive local days with
+            a naturally completed session. Resetting statistics never changes an active session.
+          </p>
+          <button id="reset-statistics" class="button button-danger" type="button">
+            Reset statistics
+          </button>
+        </div>
+        <p id="statistics-message" class="inline-message" role="status"></p>
+      </section>
+
+      <footer class="page-footer">FocusBlock works locally. No account, analytics, or cloud sync.</footer>
+    </main>
+    <script src="options.js"></script>
+  </body>
+</html>

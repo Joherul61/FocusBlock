@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FocusBlock</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="popup">
+      <header class="brand">
+        <div class="brand-mark" aria-hidden="true">🎯</div>
+        <div>
+          <h1>FocusBlock</h1>
+          <p>Stay focused. Avoid distractions.</p>
+        </div>
+        <button id="settings-button" class="settings-button" type="button" aria-label="Open settings and statistics">
+          Settings
+        </button>
+      </header>
+
+      <section id="setup-view" aria-labelledby="setup-title">
+        <form id="focus-form">
+          <fieldset class="site-section">
+            <legend id="setup-title">What do you want to block?</legend>
+            <div id="site-options"></div>
+          </fieldset>
+
+          <label class="field-label" for="duration">Duration</label>
+          <select id="duration" name="duration" required></select>
+          <div id="custom-duration" class="custom-duration" hidden>
+            <label>
+              Hours
+              <input id="custom-hours" type="number" min="0" max="12" step="1" value="0">
+            </label>
+            <label>
+              Minutes
+              <input id="custom-minutes" type="number" min="0" max="59" step="1" value="30">
+            </label>
+            <p>Choose between 1 minute and 12 hours.</p>
+          </div>
+
+          <fieldset class="mode-section">
+            <legend class="field-label">Blocking Mode</legend>
+            <label class="mode-choice">
+              <input type="radio" name="mode" value="focus" checked>
+              <span class="mode-icon focus-icon" aria-hidden="true">⚡</span>
+              <span class="mode-copy">
+                <strong>Focus Mode</strong>
+                <small>Stop whenever you want.</small>
+              </span>
+            </label>
+            <label class="mode-choice">
+              <input type="radio" name="mode" value="lockdown">
+              <span class="mode-icon lockdown-icon" aria-hidden="true">🔒</span>
+              <span class="mode-copy">
+                <strong>Lockdown Mode</strong>
+                <small>Stay focused until the timer ends.</small>
+              </span>
+            </label>
+          </fieldset>
+
+          <button class="primary-button" type="submit">Start Focus</button>
+        </form>
+        <div class="status-line">
+          <span>Status</span>
+          <strong class="status-off">READY</strong>
+        </div>
+      </section>
+
+      <section id="active-view" class="active-view" aria-live="polite" hidden>
+        <div class="active-heading"><span aria-hidden="true">⚡</span> FOCUS MODE</div>
+        <p id="active-description" class="active-description">You can stop this session.</p>
+        <div id="countdown" class="countdown">00:00</div>
+        <div class="remaining-label">remaining</div>
+        <div class="blocking-summary">
+          <h2>Blocking</h2>
+          <p id="blocked-sites"></p>
+        </div>
+        <button id="stop-button" class="stop-button" type="button">Stop Focus</button>
+        <div id="lockdown-status" class="lockdown-status" hidden>🔒 Focus session active</div>
+        <button id="attempt-unlock-button" class="unlock-button" type="button" hidden>
+          Attempt Unlock
+        </button>
+        <form id="unlock-form" class="unlock-form" hidden>
+          <h2>🔒 Unlock Session</h2>
+          <label for="unlock-password">Enter the 4-digit password:</label>
+          <input
+            id="unlock-password"
+            name="password"
+            type="password"
+            inputmode="numeric"
+            pattern="[0-9]{4}"
+            maxlength="4"
+            minlength="4"
+            autocomplete="off"
+            required
+          >
+          <button class="primary-button" type="submit">Unlock</button>
+        </form>
+      </section>
+
+      <section id="completion-view" class="completion-view" aria-live="polite" hidden>
+        <div class="completion-icon" aria-hidden="true">🎉</div>
+        <h2>Focus Session Complete</h2>
+        <p id="completion-outcome">Completed naturally</p>
+        <div id="completed-duration" class="completed-duration">00:00</div>
+        <p>You blocked:</p>
+        <p id="completed-sites" class="completion-sites"></p>
+        <p class="completion-praise">Nice work!</p>
+        <button id="another-session-button" class="primary-button" type="button">
+          Start Another Session
+        </button>
+      </section>
+
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

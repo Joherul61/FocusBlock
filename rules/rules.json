@@ -1,0 +1,22 @@
+{
+  "durations": [
+    { "minutes": 15, "label": "15 Minutes" },
+    { "minutes": 30, "label": "30 Minutes" },
+    { "minutes": 45, "label": "45 Minutes" },
+    { "minutes": 60, "label": "1 Hour" },
+    { "minutes": 120, "label": "2 Hours" }
+  ],
+  "categories": [
+    { "id": "social", "name": "Social Media" },
+    { "id": "video", "name": "Video" }
+  ],
+  "sites": [
+    { "id": "youtube", "name": "YouTube", "category": "video", "domains": ["youtube.com", "youtu.be"] },
+    { "id": "facebook", "name": "Facebook", "category": "social", "domains": ["facebook.com", "fb.com"] },
+    { "id": "instagram", "name": "Instagram", "category": "social", "domains": ["instagram.com"] },
+    { "id": "tiktok", "name": "TikTok", "category": "video", "domains": ["tiktok.com"] },
+    { "id": "reddit", "name": "Reddit", "category": "social", "domains": ["reddit.com"] },
+    { "id": "linkedin", "name": "LinkedIn", "category": "social", "domains": ["linkedin.com"] },
+    { "id": "x", "name": "X", "category": "social", "domains": ["x.com", "twitter.com"] }
+  ]
+}
